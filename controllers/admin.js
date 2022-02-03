@@ -31,3 +31,14 @@ exports.getProducts = (req, res, next) => {
         });
     });
 };
+
+
+exports.editProduct = (req, res, next) => {
+    Product.fetchAll(products=>{
+        res.render('admin/products', {
+            prods: products, 
+            pageTitle:"Admin Products", 
+            path: '/admin/product', 
+        });
+    });
+};
