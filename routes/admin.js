@@ -1,7 +1,8 @@
 const path = require('path');
-const productController = require('../controllers/products');
+const adminController = require('../controllers/admin');
 
 const express = require('express');
+const { route } = require('express/lib/application');
 const router = express.Router();
 
 
@@ -15,7 +16,7 @@ const router = express.Router();
 //   res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
 // });
 
-router.get('/add-product', productController.getAddProduct);
+router.get('/add-product', adminController.getAddProduct);
 
 // /admin/add-product => POST
 // router.post('/add-product', (req, res, next) => {
@@ -23,7 +24,11 @@ router.get('/add-product', productController.getAddProduct);
 //   res.redirect('/');
 // });
 
-router.post('/add-product', productController.postAddproduct);
+router.get('/products', adminController.getProducts);
+
+router.post('/add-product', adminController.postAddproduct);
+
+// router.post('/edit-product', adminController.editProduct)
 
 module.exports = router;
 
