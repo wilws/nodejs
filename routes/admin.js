@@ -28,8 +28,10 @@ router.get('/products', adminController.getProducts);
 
 router.post('/add-product', adminController.postAddproduct);
 
-// router.post('/edit-product', adminController.editProduct)
+router.get('/edit-product/:productId', adminController.getEditProduct);
+router.post('/edit-product', adminController.postEditProduct);
 
+router.post('/delete-product', adminController.postDeleteProduct);
 module.exports = router;
 
 // exports.routes = router;
